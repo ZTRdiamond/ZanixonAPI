@@ -2,28 +2,25 @@ module.exports = {
     path: '/endpoints',
     code: `
 $send[200;json;{
-"home": 'Zanixon API',
-"creator": "ZTRdiamond#9126",
-"base URL": "https://test-api-coyy.fatahillahal.repl.co/",
-"routes": [{
-"anime":[
-"/api/anime/coupleprofile"
-]
-},{
+"name": "Zanixon API",
+"owner": [
+"ZTRdiamond#9126"
+],
+"base URL": "apiUrl/",
+"requestCount": "$getVar[requestCount]",
+"endpoints": [{
 "fun":[
-"/api/fun/gay?avatar=url",
-"/api/fun/wasted?avatar=url&text=sometexts",
-"/api/fun/wanted?avatar=url",
-"/api/fun/gun?avatar=url",
-"/api/fun/"
-]
-},{
-"tools":[
-"/tools/percent?value=number&maxvalue=number",
-"/tools/progress-bar?barsize=number&value=number&maxvalue=number",
-"/tools/abbreviate?number=num"
+"/api/fun/gay?avtr=url","/api/fun/wanted?avtr=url&reward=text",
+"/api/fun/skeletonpointing?avtr=url&text=text","/api/gun?avtr=url","/api/fun/stonks?avtr=url"
+],
+"random":[
+"/api/random/waifu","/api/random/husbu","/api/random/neko"
+],
+"utils":[
+"/api/utils/percent?value=number&maxvalue=number","/api/utils/progress-bar?barsize=number&value=number&maxvalue=number","/api/utils/abbreviate?number=num"
 ]
 }]
 }]
+
 `
 }
