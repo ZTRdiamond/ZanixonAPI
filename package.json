@@ -1,5 +1,5 @@
 {
-  "name": "daimon-api",
+  "name": "zanixon-api",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@replit/database": "^2.0.2",
     "colors": "^1.4.0",
-    "easy-api.ts": "^1.2.0"
+    "easy-api.ts": "^2.1.0"
   }
 }
