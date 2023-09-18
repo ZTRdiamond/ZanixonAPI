@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zanixon API - Freemium</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/config/css/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .open {
+      width: 70%;
+    }
+   
+    .navbar-overlay.open {
+      width: 25%;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .navbar {
+        height: 60px;
+      }
+      
+      .card {
+         width: 85%;
+      }
+      
+      .navbar-overlay.open {
+         width: 70%;
+      }
+    }
+  </style>
+  <script>
+    function toggleNavbar() {
+      var navbarOverlay = document.getElementById("navbar-overlay");
+      var navbarItems = document.getElementsByClassName("navbar-li");
+      
+      navbarOverlay.classList.toggle("open");
+      
+      // Tambahkan logika untuk menyembunyikan elemen ul/li
+      for (var i = 0; i < navbarItems.length; i++) {
+        navbarItems[i].classList.toggle("hidden");
+      }
+    }
+  </script>
+</head>
+<body class="wall-main">
+  <div class="navbar-overlay" id="navbar-overlay">
+    <div class="navbar">
+      <button class="navbar-toggle" onclick="toggleNavbar()"><i class="fas fa-bars"></i></button>
+      <div class="navbar-title"><img class="zn-logo" src="/static/zanixonapi.webp" alt="zanixonapi.webp"/></div>
+    </div>
+    <div class="navbtn-list">
+      <ul class="navbar-ul">
+        <h3 class="navbar-menu-title"> <i class="fas fa-user"> </i> Account</h3>
+        <li class="navbar-li"><a class="navbar-a" href="/signin"><i class="fas fa-arrow-right-to-bracket"> </i> Sign In</a></li>
+        <li class="navbar-li"><a class="navbar-a" href="/signup"><i class="fas fa-address-card"> </i> Sign Up</a></li>
+        <h3 class="navbar-menu-title"> <i class="fas fa-info-circle"> </i>API Information</h3>
+        <li class="navbar-li"><a class="navbar-a" href="/docs"><i class="fa-solid fa-file"> </i> Documentation</a></li>
+        <li class="navbar-li"><a class="navbar-a" href="/pricing"><i class="fa-solid fa-wallet"> </i> Pricing</a></li>
+        <li class="navbar-li"><a class="navbar-a" href="/status"><i class="fa-solid fa-server"> </i> Status</a></li>
+        <li class="navbar-li"><a class="navbar-a" href="https://github.com/ZTRdiamond"><i class="fa-solid fa-user"> </i> Creator</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="navbar" style="background-color: #01bdff;">
+    <button class="navbar-toggle" onclick="toggleNavbar()"><i class="fas fa-bars"></i></button>
+    <div class="navbar-title"><img class="zn-logo" src="/static/zanixonapi.webp" alt="zanixonapi.webp"/></div>
+  </div>
+  <br>
+  <div class="container">
+      <div>
+          <div style="display: flex; justify-content: center;">
+              <img style="width: 300px; height: auto;" src="/static/roxy-no-bg.webp" />
+          </div>
+          <h1 class="card-title" style="font-family: Rubik; text-align: center; color: #fff;  background-color: #01bdff; padding: 10px; margin-right: -48px; margin-left: -48px; text-shadow: 0px 5px 5px rgba(0, 0, 0, 1); font-size: 55px; border-radius: 20px; margin-top: -70px;">Welcome!</h1>
+      </div>
+  </div>
+  <br>
+  <div class="container">
+      <div class="card">
+          <h1 class="card-title">What is zanixon API?</h1><hr><br>
+          <p class="card-text">Zanixon API is a free rest API that can be used by everyone without usage limits, Zanixon API was made as my learning material about javascript and express.js and this rest API is the second version of the previous one. The difference is that the previous one has a few endpoints and uses the easy-api.ts package but finally I felt something was missing so I decided to use express.js and make the second version of the Zanixon API, For the first version of the rest API I have turned off because the server is used for this second API.</p>
+      </div>
+  </div>
+  
+  <div class="container">
+      <div class="card">
+          <h1 class="card-title">What are the API endpoint categories?</h1><hr><br>
+          <p class="card-text">We have several endpoints with the following categories:</p>
+          <p class="card-text">✦ Text</p>
+          <p class="card-text">✦ Anime</p>
+          <p class="card-text">✦ Canvas</p>
+          <p class="card-text">✦ Downloader</p>
+          <p class="card-text">✦ Fun</p>
+          <p class="card-text">✦ Games</p>
+          <p class="card-text">✦ Tools</p>
+          <p class="card-text">✦ Other</p>
+      </div>
+  </div>
+  
+  <div class="container">
+     <div class="card">
+        <p style="text-align: center; font-family: varela; font-size: 16px;">Made with 💖 by <a href="https://github.com/ZTRdiamond" style="text-decoration: none; color: #03fff7;">ZTRdiamond</a></p>
+        <p style="text-align: center; font-family: varela; font-size: 15px; margin-top: -10px;">© <a href="https://github.com/ZTRdiamond" style="text-decoration: none; color: #03fff7;">Zanixon Group™</a> All Right Reserved</p>
+     </div>
+  </div>
+</body>
+</html>

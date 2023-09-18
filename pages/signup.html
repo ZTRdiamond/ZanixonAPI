@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+   <link rel="stylesheet" href="/config/css/style.css">
+  <style>/*
+    body {
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      background-color: #101010;
+      font-family: arial;
+    }
+    
+    button:active,
+    button:focus,
+    input:active,
+    input:focus,
+    a:active,
+    a:focus,
+    a:hover {
+      outline: none;
+      box-shadow: none;
+    }
+
+    
+    .navbar-overlay {
+      overflow: hidden;
+      position: fixed;
+      left: 0;
+      right: 30px;
+      top: 0;
+      height: 100%;
+      width: 0;
+      background-color: rgba(4, 130, 164);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+      overflow-x: hidden;
+      transition: 0.3s;
+      z-index: 1;
+    }
+    
+    .navbar {
+      position: sticky;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #01bdff;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      box-sizing: border-box;
+      z-index: 2;
+      margin-top: 0;
+    }
+    
+    .navbtn-list {
+      overflow: hidden; 
+      overflow-y: auto;
+      max-height: calc(100vh - 60px);
+    }
+    
+    .navbar-ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 15px;
+      font-family: arial;
+    }
+    
+    .navbar-menu-title {
+       color: #fff;
+       font-family: arial;
+       font-weight: bold;
+       font-size: 20px;
+       padding-left: 10px;
+       white-space: pre;
+    }
+    
+    .navbar-li {
+      white-space: pre;
+      margin: 10px;
+      overflow: hidden;
+      background-color: #01bdff;
+      border-radius: 8px;
+      transition: opacity 0.5s;
+      opacity: 0;
+      border: 2px solid #01bdff;
+    }
+    
+    .navbar-li:hover {
+      border: 2px solid #fff;
+    }
+    
+    .navbar-li.hidden {
+      opacity: 1;
+    }
+    
+    .navbar-a {
+      display: block;
+      font-family: arial;
+      font-weight: bold;
+      font-size: 17.5px;
+      color: #fff;
+      padding: 10px;
+      text-decoration: none;
+    }
+    
+    .navbar-toggle {
+      display: inline-block;
+      color: #fff;
+      font-size: 20px;
+      margin-right: 10px;
+      cursor: pointer;
+      background-color: transparent;
+      border: 2px solid #fff;
+      border-radius: 5px;
+    }
+    
+    .navbar-toggle:hover {
+      display: inline-block;
+      color: #01bdff;
+      font-size: 20px;
+      margin-right: 10px;
+      cursor: pointer;
+      background-color: #fff;
+      border: 2px solid #fff;
+      border-radius: 5px;
+    }
+    
+    .navbar-title {
+      display: inline-block;
+      color: #ffffff;
+      font-size: 25px;
+      font-family: arial;
+      font-weight: bold;
+    }*/
+    
+    .container {
+       display: flex;
+       justify-content: center;
+    }
+    
+    .card-up {
+      width: 70%;
+      padding: 20px;
+      margin: 20px;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      background-color: rgba(1, 189, 255, 0.90);
+    }
+    
+    .card-title-up {
+       color: #fff;
+       font-family: Rubik;
+       text-align: center;
+    }
+    
+    form {
+       display: flex;
+       flex-direction: column;
+       font-family: varela;
+       font-weight: bold;
+       font-size: 18px;
+       text-decoration: none;
+       
+    }
+
+    label {
+       margin-bottom: 1px;
+       margin-top: -20px;
+       font-family: varela;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+       color: #fff;
+       font-family: varela;
+       font-size: 15px;
+       font-weight: bold;
+       padding: 8px;
+       margin-bottom: 1px;
+       border: 2px solid #fff;
+       border-radius: 8px;
+       background-color: rgba(1, 1, 1, 0.3);
+    }
+    
+    .noted {
+        color: #000;
+        font-size: 16px;
+        font-family: Varela;
+        font-weight: normal;
+    }
+    
+    .btn-signup {
+       background-color: #fff;
+       border: 2px solid #fff;
+       border-radius: 8px;
+       color: #01bdff;
+       font-family: varela;
+       font-weight: bold;
+       font-size: 20px;
+       padding: 8px;
+       text-align: center;
+       text-decoration: none;
+       margin-top: 10px;
+    }
+    
+    .btn-signup:hover {
+       background-color: #01bdff;
+       border: 2px solid #fff;
+       border-radius: 8px;
+       color: #fff;
+       font-family: Varela;
+       font-weight: bold;
+       font-size: 20px;
+       padding: 8px;
+       text-align: center;
+       text-decoration: none;
+       margin-top: 10px;
+    }
+    
+    .btn-sign-extra { 
+       margin-top: 10px;
+       text-align: center;
+       font-family: Varela;
+       font-weight: bold;
+       font-size: 16px;
+       color: #101010;
+       text-decoration: none;
+    }
+    
+    .btn-sign-extra:hover { 
+       margin-top: 10px;
+       text-align: center;
+       font-family: Varela;
+       font-weight: bold;
+       font-size: 16px;
+       color: #fff;
+       text-decoration: none;
+    }
+    
+    .open {
+      width: 70%;
+    }
+   
+    .navbar-overlay.open {
+      width: 25%;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .navbar {
+        height: 60px;
+      }
+      
+      .card-up {
+         width: 70%;
+      }
+      
+      .navbar-overlay.open {
+         width: 70%;
+      }
+    }
+  </style>
+  <script>
+    function toggleNavbar() {
+      var navbarOverlay = document.getElementById("navbar-overlay");
+      var navbarItems = document.getElementsByClassName("navbar-li");
+      
+      navbarOverlay.classList.toggle("open");
+      
+      // Tambahkan logika untuk menyembunyikan elemen ul/li
+      for (var i = 0; i < navbarItems.length; i++) {
+        navbarItems[i].classList.toggle("hidden");
+      }
+    }
+  </script>
+</head>
+<body class="wall-main">
+  <div class="navbar-overlay" id="navbar-overlay">
+    <div class="navbar">
+      <button class="navbar-toggle" onclick="toggleNavbar()"><i class="fas fa-bars"></i></button>
+      <div class="navbar-title"><img class="zn-logo" src="/static/zanixonapi.webp" alt="zanixonapi.webp"/></div>
+    </div>
+    <div class="navbtn-list">
+      <ul class="navbar-ul">
+        <h3 class="navbar-menu-title"> <i class="fas fa-info-circle"> </i>API Information</h3>
+        <li class="navbar-li"><a class="navbar-a" href="/"><i class="fa-solid fa-home"> </i> Home</a></li>
+        <li class="navbar-li"><a class="navbar-a" href="/pricing"><i class="fa-solid fa-wallet"> </i> Pricing</a></li>
+        <li class="navbar-li"><a class="navbar-a" href="/status"><i class="fa-solid fa-server"> </i> Status</a></li>
+        <li class="navbar-li"><a class="navbar-a" href="https://github.com/ZTRdiamond"><i class="fa-solid fa-user"> </i> Creator</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="navbar" style="background-color: #01bdff;">
+    <button class="navbar-toggle" onclick="toggleNavbar()"><i class="fas fa-bars"></i></button>
+    <div class="navbar-title"><img class="zn-logo" src="/static/zanixonapi.webp" alt="zanixonapi.webp"/></div>
+  </div>
+  <br><br><br>
+  
+  <div class="container" style="display: flex; justify-content: center;">
+  <div class="card-up">
+     <h1 class="card-title-up">Sign Up</h1><br>
+     <form id="signup-form" action="/signup" method="POST">
+       <label for="username">Username:</label>
+       <input type="text" id="username" name="username" required><br><br>
+       <label for="email">Email:</label>
+       <input type="email" id="email" name="email" required><br><br>
+       <label for="password">Password:</label>
+       <input type="password" id="password" name="password" required>
+       <p class="noted"><span style="font-weight: bold;">Note:</span> do not use the same password from your email, I'm not install more security on this website so i hope you understand.</p><br>
+       <input class="btn-signup" type="submit" value="Sign Up">
+       <a class="btn-sign-extra" href="/signin" target="_self">Already have account?</a>
+     </form>
+  </div>     
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+  <script>
+
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const email = document.getElementById('email').value;
+
+      fetch('/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'username=' + encodeURIComponent(username) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          window.location.href = data.redirectUrl;
+        } else {
+          Swal.fire({
+              showConfirmButton: false,
+              title: 'Sign Up Failed!',
+              content: 'text',
+              html: `<span style="color: #101010; font-family: cabin; font-size: 20px;">${data.message}</span>`, 
+              timer: 5000,
+              customClass: {
+                  container: 'modal-container',
+                  popup: 'modal-popup',
+                  title: 'modal-title',
+                  confirmButton: 'modal-button',
+                  content: 'modal-text'
+              }
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+</body>
+</html>

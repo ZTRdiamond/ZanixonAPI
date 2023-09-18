@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/config/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+  <style>
+    form {
+       display: flex;
+       flex-direction: column;
+       font-family: varela;
+       font-weight: bold;
+       font-size: 18px;
+       text-decoration: none;
+       
+    }
+
+    label {
+       margin-bottom: 1px;
+       margin-top: -20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+       color: #fff;
+       font-family: varela;
+       font-size: 15px;
+       font-weight: bold;
+       padding: 8px;
+       margin-bottom: 1px;
+       border: 2px solid #fff;
+       border-radius: 8px;
+       background-color: rgba(1, 1, 1, 0.3);
+    }
+    
+    .btn-signin {
+       background-color: #fff;
+       border: 2px solid #fff;
+       border-radius: 8px;
+       color: #01bdff;
+       font-family: varela;
+       font-weight: bold;
+       font-size: 20px;
+       padding: 8px;
+       text-align: center;
+       text-decoration: none;
+       margin-top: 10px;
+    }
+    
+    .btn-signin:hover {
+       background-color: #01bdff;
+       border: 2px solid #fff;
+       border-radius: 8px;
+       color: #fff;
+       font-family: varela;
+       font-weight: bold;
+       font-size: 20px;
+       padding: 8px;
+       text-align: center;
+       text-decoration: none;
+       margin-top: 10px;
+    }
+    
+    .btn-sign-extra { 
+       margin-top: 10px;
+       text-align: center;
+       font-family: varela;
+       font-weight: bold;
+       font-size: 16px;
+       color: #101010;
+       text-decoration: none;
+    }
+    
+    .btn-sign-extra:hover { 
+       margin-top: 10px;
+       text-align: center;
+       font-family: varela;
+       font-weight: bold;
+       font-size: 16px;
+       color: #fff;
+       text-decoration: none;
+    }
+    
+    .container {
+       display: flex;
+       justify-content: center;
+    }
+    
+    .card-in {
+      width: 70%;
+      padding: 20px;
+      margin: 20px;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      background-color: rgba(1, 189, 255, 0.90);
+    }
+    
+    .card-title-in {
+       color: #fff;
+       font-family: Rubik;
+       text-align: center;
+    }
+    
+    .open {
+      width: 70%;
+    }
+    
+    .navbar-overlay.open {
+      width: 25%;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .navbar {
+        height: 60px;
+      }
+      
+      .card-in {
+         width: 70%;
+      }
+      
+      .navbar-overlay.open {
+         width: 70%;
+      }
+    }
+  </style>
+  <script>
+    function toggleNavbar() {
+      var navbarOverlay = document.getElementById("navbar-overlay");
+      var navbarItems = document.getElementsByClassName("navbar-li");
+      
+      navbarOverlay.classList.toggle("open");
+      
+      // Tambahkan logika untuk menyembunyikan elemen ul/li
+      for (var i = 0; i < navbarItems.length; i++) {
+        navbarItems[i].classList.toggle("hidden");
+      }
+    }
+  </script>
+</head>
+<body class="wall-main">
+  <div class="navbar-overlay" id="navbar-overlay">
+    <div class="navbar">
+      <button class="navbar-toggle" onclick="toggleNavbar()"><i class="fas fa-bars"></i></button>
+      <div class="navbar-title"><img class="zn-logo" src="/static/zanixonapi.webp" alt="zanixonapi.webp"/></div>
+    </div>
+    <div class="navbtn-list">
+      <ul class="navbar-ul">
+        <h3 class="navbar-menu-title"> <i class="fas fa-info-circle"> </i>API Information</h3>
+        <li class="navbar-li"><a class="navbar-a" href="/"><i class="fa-solid fa-home"> </i> Home</a></li>
+        <li class="navbar-li"><a class="navbar-a" href="/pricing"><i class="fa-solid fa-wallet"> </i> Pricing</a></li>
+        <li class="navbar-li"><a class="navbar-a" href="/status"><i class="fa-solid fa-server"> </i> Status</a></li>
+        <li class="navbar-li"><a class="navbar-a" href="https://github.com/ZTRdiamond"><i class="fa-solid fa-user"> </i> Creator</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="navbar" style="background-color: #01bdff;">
+    <button class="navbar-toggle" onclick="toggleNavbar()"><i class="fas fa-bars"></i></button>
+    <div class="navbar-title"><img class="zn-logo" src="/static/zanixonapi.webp" alt="zanixonapi.webp"/></div>
+  </div>
+  <br><br><br>
+  
+  <div class="container" style="display: flex; justify-content: center;">
+  <div class="card-in">
+     <h1 class="card-title-in">Sign In</h1><br>
+     <form id="signin-form" action="/signin" method="POST">
+       <label style="font-family: Varela;" for="username">Username:</label>
+       <input type="text" id="username" name="username" required><br><br>
+       <label style="font-family: Varela;" for="password">Password:</label>
+       <input type="password" id="password" name="password" required><br><br>
+       <input class="btn-signin" style="font-family: Varela;" type="submit" value="Sign In">
+       <a class="btn-sign-extra" href="/reset-password" style="font-family: Varela;" target="_blank">Forgot password?</a><a class="btn-sign-extra" href="/signup" style="font-family: Varela;" target="_self">Don't have account?</a>
+     </form>
+  </div>     
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script>
+    document.getElementById('signin-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      fetch('/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          window.location.href = data.redirectUrl;
+        } else {
+          Swal.fire({
+              showConfirmButton: false,
+              title: 'Sign In Failed!',
+              content: 'text',
+              html: `<span class="modal-content">${data.message}</span>`, 
+              timer: 5000,
+              customClass: {
+                  container: 'modal-container',
+                  popup: 'modal-popup',
+                  title: 'modal-title',
+                  confirmButton: 'modal-button',
+                  content: 'modal-text'
+              }
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+</body>
+</html>

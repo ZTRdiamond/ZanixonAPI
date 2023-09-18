@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ZanixonAPI Docs | Text</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js"></script>
+   <script src="/static/socket.io/socket.io.js"></script>
+   <link rel="stylesheet" href="/config/css/style.css">
+  <style>    
+    .open {
+      width: 70%;
+    }
+    
+    .navbar-overlay.open {
+      width: 25%;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .navbar {
+        height: 60px;
+      }
+      
+      .card {
+         width: 85%;
+      }
+      
+      .navbar-overlay.open {
+         width: 70%;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script>
+    function toggleNavbar() {
+      var navbarOverlay = document.getElementById("navbar-overlay");
+      var navbarItems = document.getElementsByClassName("navbar-li");
+      
+      navbarOverlay.classList.toggle("open");
+      
+      // Tambahkan logika untuk menyembunyikan elemen ul/li
+      for (var i = 0; i < navbarItems.length; i++) {
+        navbarItems[i].classList.toggle("hidden");
+      }
+    }
+    
+    function toggleDropdown(event) {
+  event.preventDefault();
+  const dropdown = event.target.nextElementSibling;
+  dropdown.classList.toggle("show");
+}
+
+document.addEventListener("click", function(event) {
+  const dropdowns = document.getElementsByClassName("dropdown-menu");
+  for (let i = 0; i < dropdowns.length; i++) {
+    const dropdown = dropdowns[i];
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove("show");
+    }
+  }
+});
+  </script>
+</head>
+<body>
+  <div class="navbar-overlay" id="navbar-overlay">
+    <div class="navbar">
+      <button class="navbar-toggle" onclick="toggleNavbar()"><i class="fas fa-bars"></i></button>
+      <div class="navbar-title"><img class="zn-logo" src="/static/zanixonapi.webp" alt="zanixonapi.webp"/></div>
+    </div>
+    <div class="navbtn-list">
+      <ul class="navbar-ul">
+        <h3 class="navbar-menu-title"> <i class="fas fa-user"> </i> Account</h3>
+        <li class="navbar-li"><a class="navbar-a" href="/dashboard"><i class="fas fa-gear"> </i> Dashboard</a></li>
+        <h3 class="navbar-menu-title"> <i class="fas fa-code"> </i>Docs category</h3>
+        <li class="navbar-li"><a class="navbar-a show"><i class="fa-solid fa-pen"> </i> Text</a></li>
+        <li class="navbar-li"><a class="navbar-a"><i class="fa-solid fa-image"> </i> Image</a></li>
+        <li class="navbar-li"><a class="navbar-a"><i class="fa-solid fa-paint-brush"> </i> Canvas</a></li>
+        <li class="navbar-li"><a class="navbar-a"><i class="fa-solid fa-download"> </i> Downloader</a></li>
+        <li class="navbar-li"><a class="navbar-a"><i class="fa-solid fa-dice-six"> </i> Fun & Games</a></li>
+        <li class="navbar-li"><a class="navbar-a"><i class="fa-solid fa-tools"> </i> Tools</a></li>
+        <li class="navbar-li"><a class="navbar-a"><i class="fa-solid fa-ellipsis-h"> </i> Other</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="navbar" style="background-color: #01bdff;">
+    <button class="navbar-toggle" onclick="toggleNavbar()"><i class="fas fa-bars"></i></button>
+    <div class="navbar-title"><img class="zn-logo" src="/static/zanixonapi.webp" alt="zanixonapi.webp"/></div>
+  </div>
+  
+  <div class="container">
+    <div class="card" style="background-image: url('/static/bg.webp'); background-size: 100%; background-position: center center; border: 1px solid #fff">
+       <h1 style="text-align: center; font-family: Rubik; font-size: 40px;">Dashboard</h1>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="card">
+       <h3 class="card-title">API statistic:</h3><hr><br>
+       <p class="card-text">Total request:&nbsp;<span class="card-value" id="totalRequest">Fetching...</span></p>
+       <p class="card-text">Total user:&nbsp;<span class="card-value" id="totalUserRegister">Fetching...</span></p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="card">
+       <h3 class="card-title">User details:</h3><hr><br>
+       <p class="card-text">Username:&nbsp;<span class="card-value" id="userName">Fetching...</span></p>
+       <p class="card-text">Limit:&nbsp;<span class="card-value" id="resetLimitTime">Fetching...</span></p>
+       <p class="card-text">Apikey:&nbsp;<span class="card-value" id="apiKey">Fetching...</span> <button class="copy" id="copy-button" onclick="copyTextFromSocket()">Copy</button></p>
+       <p class="card-text">Total user request:&nbsp;<span class="card-value" id="totalUserRequest">Fetching...</span></p>
+    </div>
+  </div>
+ 
+  <div class="container">
+     <div class="card">
+        <p style="text-align: center; font-family: varela; font-size: 16px;">Made with 💖 by <a href="https://github.com/ZTRdiamond" style="text-decoration: none; color: #03fff7;">ZTRdiamond</a></p>
+        <p style="text-align: center; font-family: varela; font-size: 15px; margin-top: -10px;">© <a href="https://github.com/ZTRdiamond" style="text-decoration: none; color: #03fff7;">Zanixon Group™</a> All Right Reserved</p>
+     </div>
+  </div>
+</body>
+</html>
